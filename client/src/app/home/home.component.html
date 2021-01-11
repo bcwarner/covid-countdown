@@ -1,0 +1,48 @@
+<!--<h2>Progress</h2>
+<span>Vaccines Administered (1st): {{vaccines_used}}</span>
+<span>Vaccines Administered (2nd): {{vaccines_used}}</span>
+<span>Total US Population: </span>-->
+
+<h2>Important Statistics</h2>
+
+<mat-grid-list cols="4" rowHeight="4:1">
+    <mat-grid-tile *ngFor="let stat of stats | keyvalue">
+        <div style="width: 100%">
+            <h5>
+                {{stat.key}}
+            </h5>
+            <h3>
+                {{stat.value}}
+            </h3>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<h2>Projection</h2>
+<table mat-table [dataSource]="projections" class="mat-elevation-z8" style="width: 100%">
+
+    <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Regression</th>
+        <td mat-cell *matCellDef="let item"> {{item[0]}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="date">
+        <th mat-header-cell *matHeaderCellDef>Target Date</th>
+        <td mat-cell *matCellDef="let item"> {{item[2]}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="days">
+        <th mat-header-cell *matHeaderCellDef>Days Left</th>
+        <td mat-cell *matCellDef="let item"> {{item[1]}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="correl">
+        <th mat-header-cell *matHeaderCellDef>Days Left</th>
+        <td mat-cell *matCellDef="let item"> {{item[1]}} </td>
+    </ng-container>
+    
+    <tr mat-header-row *matHeaderRowDef="displayedCols"></tr>
+    <tr mat-row *matRowDef="let myRowData; columns: displayedCols"></tr>
+</table>
+<!--<div *ngFor="let item of projections">{{item[0]}}: {{item[1]}} days, projecting {{item[2]}}<br></span>-->
