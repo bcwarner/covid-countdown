@@ -19,7 +19,19 @@
 </mat-grid-list>
 
 <h2>Projection</h2>
-<table mat-table [dataSource]="projections" class="mat-elevation-z8" style="width: 100%">
+<mat-grid-list cols="3" rowHeight="3:2">
+    <mat-grid-tile *ngFor="let item of projections">
+        <div style="width: 100%">
+            <h4>Regression Type: {{item[0]}}</h4>
+            <h4 mathjax>Correlation (\(r^2\)): {{item[4]}}</h4>
+            <h4>Estimated Date:</h4>
+            <h1>{{item[2]}}</h1>
+            <h4>Days Left:</h4>
+            <h1>{{item[1]}}</h1>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>
+<!--<table mat-table [dataSource]="projections" class="mat-elevation-z8" style="width: 100%">
 
     <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Regression</th>
@@ -44,5 +56,5 @@
     
     <tr mat-header-row *matHeaderRowDef="displayedCols"></tr>
     <tr mat-row *matRowDef="let myRowData; columns: displayedCols"></tr>
-</table>
+</table>-->
 <!--<div *ngFor="let item of projections">{{item[0]}}: {{item[1]}} days, projecting {{item[2]}}<br></span>-->

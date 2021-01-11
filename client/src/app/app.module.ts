@@ -13,6 +13,7 @@ import { MatGridListModule } from '@angular/material/grid-list';
 
 import { HttpClientModule } from '@angular/common/http';
 
+import { MathJaxModule } from 'ngx-mathjax';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,12 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatTableModule,
     MatCardModule,
-    MatGridListModule
+    MatGridListModule,
+    MathJaxModule.forRoot({
+      version: '2.7.5',
+      config: 'TeX-AMS_HTML',
+      hostname: 'cdnjs.cloudflare.com'
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

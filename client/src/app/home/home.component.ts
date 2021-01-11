@@ -9,8 +9,9 @@ import { HomeService } from '../home.service';
 export class HomeComponent implements OnInit {
   projections: Object[][];
   stats: Map<String, number>;
+  r2: "r^2";
 
-  displayedCols = ["name", "days", "date",];
+  displayedCols = ["name", "days", "date"];
 
   constructor(private homeService: HomeService) { 
     
