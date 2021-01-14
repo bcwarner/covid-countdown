@@ -1,0 +1,18 @@
+<h3>How reliable are these predictions?</h3>
+<p><i>“Hindsight is forever 20/20, but foresight is legally blind” - Ben Graham</i></p>
+<p>The correlation coefficients included are high and indicate some degree of correctness, but in reality are significantly off. There are several reasons to doubt these estimates, including that there are a limited number of points, and the model takes a very limited amount of information into consideration.</p>
+
+<h3>Should I use these predictions in planning?</h3>
+<p><b>No.</b> These predictions are merely to provide perspective and educate. Vaccine distribution could slow down significantly, or increase rapidly, and so the actual date that everyone will be vaccinated may differ from this model's prediction. Should you utilize these predictions, it is entirely at your risk.</p>
+
+<h3>How are these estimations made?</h3>
+<p>This model uses <a href="https://sklearn.org">sklearn's</a> LinearRegression and attempts to map total vaccinations (1<sup>st</sup> dose) to date. The regression may be taken upon the idenity (i.e. unaltered value), the natural log, or the square root of the vaccinations. It attempts to find a fit that ideally minimizes the error between the best fit linear equation and the ground truth. The dataset used is provided by <a href="https://github.com/owid/covid-19-data">Our World in Data</a>, which is in aggregated from various sources, one of which is the U.S. CDC. The U.S. CDC data is ultimately what is regressed upon.</p>
+
+<h3>How can I get vaccinated?</h3>
+<p>Please refer to your local public health officials for when you can get vaccinated. </p>
+
+<h3>Is the vaccine safe/effective?</h3>
+<p>Yes, the vaccines currently available in the U.S. must follow <a href="https://www.fda.gov/vaccines-blood-biologics/vaccines/emergency-use-authorization-vaccines-explained">guidelines set out by the U.S. Food and Drug Administration</a>, which outline safety and efficacy. The two current vaccines available in the U.S., designed and produced by Pfizer/BioNTech and Moderna, have a demonstrated <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2034577">95% efficacy</a> and <a href="https://www.nejm.org/doi/full/10.1056/NEJMoa2035389">94.1% efficacy</a>, respectively.</p>
+
+<h3>How can I contribute?</h3>
+<p>You can contribute to this project <a href="https://github.com/bcwarner/covid-countdown">here</a>. Some of the various things that need to be done include creating more accurate models, improving the architecture, and so on. You can also help by getting vaccinated and following public health guidelines.</p>

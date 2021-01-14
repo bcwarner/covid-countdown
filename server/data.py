@@ -43,7 +43,7 @@ json.dump(outp, open("proj.json", "w"))
 # Generate figures
 dout = {}
 dout["US Population"] = US_POPULATION
-dout["Vaccines Administered Total"] = df["total_vaccinations"].sum()
-dout["Estimated Remaining"] = US_POPULATION - df["total_vaccinations"].sum()
+dout["Vaccines Administered Total"] = df["total_vaccinations"].iloc[-1]
+dout["Estimated Remaining"] = US_POPULATION - df["total_vaccinations"].iloc[-1]
 dout["Last Updated"] = pd.to_datetime(df["date"].iloc[-1]).strftime('%m/%d/%Y')
 json.dump(dout, open("stat.json", "w"))

@@ -1,6 +1,17 @@
-<mat-toolbar color="primary">
-  <span>Covid Vaccine Countdown</span>
-</mat-toolbar>
-<div id="body" style="padding: 1%;">
-  <router-outlet></router-outlet>
+<div fxLayout="column" fxFlexFill>
+  <div fxFlex="none">
+    <mat-toolbar color="primary" style="height: 64px;">
+      <a routerLink="/" routerLinkActive="activebutton" mat-button>COVID Vaccine Countdown</a>
+      <span style="flex: 1 1 auto;"></span>
+      <a routerLink="/info" routerLinkActive="activebutton" mat-button>FAQ</a>
+    </mat-toolbar>
+  </div>
+  <div id="body" style="padding: 1%;" fxFlex>
+    <router-outlet></router-outlet>
+  </div>
+  <div fxFlex="none">
+    <mat-toolbar>
+      <a routerLink="/tcd" routerLinkActive="activebutton" mat-button>Terms, Conditions, & Disclaimer</a>
+    </mat-toolbar>
+  </div>
 </div>

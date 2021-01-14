@@ -3,3 +3,5 @@
 vcount.csv
 server/node_modules
 node_modules/
+server/proj.json
+server/stat.json

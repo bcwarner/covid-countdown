@@ -14,11 +14,19 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { HttpClientModule } from '@angular/common/http';
 
 import { MathJaxModule } from 'ngx-mathjax';
+import { InfoComponent } from './info/info.component';
+
+import { MatButton, MatButtonModule } from '@angular/material/button';
+import { DisclaimerComponent } from './disclaimer/disclaimer.component';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    InfoComponent,
+    DisclaimerComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +41,9 @@ import { MathJaxModule } from 'ngx-mathjax';
       version: '2.7.5',
       config: 'TeX-AMS_HTML',
       hostname: 'cdnjs.cloudflare.com'
-    })
+    }),
+    MatButtonModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]
