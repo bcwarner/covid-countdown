@@ -5,7 +5,7 @@
 
 <h2>Important Statistics</h2>
 
-<mat-grid-list cols="4" rowHeight="4:1">
+<mat-grid-list [cols]="upperCols" rowHeight="4:1" (window:resize)="windowResize($event)">
     <mat-grid-tile *ngFor="let stat of stats | keyvalue">
         <div style="width: 100%">
             <h5>
@@ -19,7 +19,7 @@
 </mat-grid-list>
 
 <h2>Projection</h2>
-<mat-grid-list cols="3" rowHeight="3:2">
+<mat-grid-list [cols]="lowerCols" rowHeight="3:2" (window:resize)="windowResize($event)">
     <mat-grid-tile *ngFor="let item of projections">
         <div style="width: 100%">
             <h4>Regression Type: {{item[0]}}</h4>
