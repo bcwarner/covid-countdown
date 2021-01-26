@@ -12,6 +12,8 @@ export class HomeComponent implements OnInit {
   r2: "r^2";
 
   displayedCols = ["name", "days", "date"];
+  lowerCols: number;
+  uppercols: number;
 
   constructor(private homeService: HomeService) { 
     
@@ -20,6 +22,13 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.homeService.getStats().subscribe(res => this.stats = res);
     this.homeService.getData().subscribe(res => this.projections = res);
+
+    this.lowerCols = (window.innerWidth <= 400) ? 1 : 3;
+    this.uppercols = (window.innerWidth <= 400) ? 1 : 4;
   }
 
+  windowResize(event) {
+    this.lowerCols = (event.target.innerWidth <= 400) ? 1 : 3;
+    this.uppercols = (event.target.innerWidth <= 400) ? 1 : 4;
+  }
 }
